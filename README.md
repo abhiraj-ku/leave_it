@@ -2,6 +2,12 @@
 
 A comprehensive Leave Management System API built with Node.js, MongoDB, and Redis. This system manages employee leave requests with proper validation, caching, and role-based access control.
 
+### Live Link
+
+Use this as the base URL for quick testing (Postman routes below):
+
+- [Live Link](https://leave-it-c3x0.onrender.com/)
+
 ## 📋 Table of Contents
 
 - [Features](#features)
