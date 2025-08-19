@@ -7,6 +7,7 @@ A comprehensive Leave Management System API built with Node.js, MongoDB, and Red
 Use this as the base URL for quick testing (Postman routes below):
 
 - [Live Link](https://leave-it-c3x0.onrender.com/)
+- [Postman](https://arko11.postman.co/workspace/hrApp~82656699-95fc-4689-9cbc-d024dae5aa31/collection/28347821-0a65566a-18c7-4c87-9143-129fdd454093?action=share&source=copy-link&creator=28347821)
 
 ## 📋 Table of Contents
 
