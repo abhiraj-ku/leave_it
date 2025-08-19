@@ -4,26 +4,31 @@ const logger = require("../utils/logger");
 // Create employee
 const createEmployee = async (req, res) => {
   try {
-    const employee = await employeeService.createEmployee(req.body);
-    res.status(201).json({
+    // Only HR can create employees → already enforced in checkRole
+    const employee = await employeeService.createEmployee(req.body, req.userId);
+
+    return res.status(201).json({
       success: true,
       message: "Employee created successfully",
       data: employee,
     });
   } catch (error) {
     logger.error("Error in create employee controller:", error.message);
-    return res.status(409).json({
+
+    if (error.code === 11000) {
+      // Duplicate key error from MongoDB (email already exists)
+      return res.status(409).json({
+        success: false,
+        message: "Employee with this email already exists",
+      });
+    }
+
+    return res.status(500).json({
       success: false,
-      message: "Employee with this email already exists",
+      message: "Internal server error",
     });
   }
-
-  res.status(500).json({
-    success: false,
-    message: "Internal server error",
-  });
 };
-
 // Get all employees
 const getAllEmployees = async (req, res) => {
   try {

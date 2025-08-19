@@ -7,7 +7,7 @@ const {
   createEmployee,
   getAllEmployees,
   getEmployeeById,
-} = require("../controllers/employeeController");
+} = require("../controller/employeeController");
 
 // Create employee (HR only)
 router.post(

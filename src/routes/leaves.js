@@ -8,15 +8,10 @@ const {
   processLeave,
   getLeaveBalance,
   getEmployeeLeaves,
-} = require("../controllers/leaveController");
+} = require("../controller/leaveController");
 
-// Apply for leave
-router.post(
-  "/apply",
-  validate(validationSchemas.applyLeave),
-  checkRole([ROLES.EMPLOYEE, ROLES.HR]),
-  applyLeave
-);
+// Apply for leave (open to any role)
+router.post("/apply", validate(validationSchemas.applyLeave), applyLeave);
 
 // Process leave (approve/reject) - HR only
 router.patch(

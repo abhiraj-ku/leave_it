@@ -20,6 +20,7 @@ const employeeSchema = new mongoose.Schema(
       trim: true,
     },
     joiningDate: {
+      // ambiguity as to which date actual joining or on to which employee was registered by hr on this platform
       type: Date,
       required: true,
     },
